@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
-namespace SS.NuGet.Publish.VisualStudio.AddIn.Commands
+namespace Farayan.NuGet.Publish.VisualStudio.AddIn.Commands
 {
     /// <summary>
     /// Command handler

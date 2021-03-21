@@ -12,7 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using VsServiceProvider = Microsoft.VisualStudio.OLE.Interop.IServiceProvider;
 
-namespace SS.NuGet.Publish.VisualStudio.AddIn
+namespace Farayan.NuGet.Publish.VisualStudio.AddIn
 {
     internal static class ServiceLocator
     {

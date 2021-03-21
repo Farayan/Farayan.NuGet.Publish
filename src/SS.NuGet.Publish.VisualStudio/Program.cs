@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SS.NuGet.Publish.VisualStudio
+namespace Farayan.NuGet.Publish.VisualStudio
 {
     class Program
     {

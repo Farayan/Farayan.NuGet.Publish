@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SS.NuGet.Publish.Test
+namespace Farayan.NuGet.Publish.Test
 {
     public class MockClass
     {

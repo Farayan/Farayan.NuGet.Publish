@@ -1,4 +1,4 @@
-﻿namespace SS.NuGet.Publish.VisualStudio
+﻿namespace Farayan.NuGet.Publish.VisualStudio
 {
     partial class PublishPackagePageControl
     {

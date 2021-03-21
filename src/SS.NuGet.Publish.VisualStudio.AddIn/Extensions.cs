@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SS.NuGet.Publish.VisualStudio.AddIn
+namespace Farayan.NuGet.Publish.VisualStudio.AddIn
 {
     static class Extensions
     {

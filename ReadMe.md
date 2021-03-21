@@ -1,4 +1,4 @@
-# SS.NuGet.Publish
+# Farayan.NuGet.Publish
 
 Automate publishing a project's NuGet package during build process.  
 
@@ -6,7 +6,7 @@ Automate publishing a project's NuGet package during build process.
 
 ## Usage
 
-To use the package, you need to add the [SS.NuGet.Publish](https://www.nuget.org/packages/SS.NuGet.Publish/) NuGet package to your project. Then configure accordingly in the .csproj file.
+To use the package, you need to add the [Farayan.NuGet.Publish](https://www.nuget.org/packages/Farayan.NuGet.Publish/) NuGet package to your project. Then configure accordingly in the .csproj file.
 
 #### Project file properties
 * **NuGetPublishVersion** *(Optional)*

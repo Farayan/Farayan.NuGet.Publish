@@ -11,10 +11,10 @@ using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.Win32;
-using SS.NuGet.Publish.VisualStudio.AddIn.Commands;
+using Farayan.NuGet.Publish.VisualStudio.AddIn.Commands;
 using Task = System.Threading.Tasks.Task;
 
-namespace SS.NuGet.Publish.VisualStudio.AddIn
+namespace Farayan.NuGet.Publish.VisualStudio.AddIn
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.

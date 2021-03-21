@@ -42,7 +42,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SS.NuGet.Publish\SS.NuGet.Publish.csproj" />
+    <ProjectReference Include="..\SS.NuGet.Publish\Farayan.NuGet.Publish.csproj" />
   </ItemGroup>
 
 </Project>

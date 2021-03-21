@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SS.NuGet.Publish.VisualStudio.AddIn")]
+[assembly: AssemblyTitle("Farayan.NuGet.Publish.VisualStudio.AddIn")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SS.NuGet.Publish.VisualStudio.AddIn")]
+[assembly: AssemblyProduct("Farayan.NuGet.Publish.VisualStudio.AddIn")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.Editors.PropertyPages;
 using Microsoft.VisualStudio.Shell;
-using SS.NuGet.Publish.VisualStudio;
+using Farayan.NuGet.Publish.VisualStudio;
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace SS.NuGet.Publish
+namespace Farayan.NuGet.Publish
 {
     [ComVisible(true)]
     [Guid("AA790F50-5208-41F5-89B2-D3733E12BE1D")]

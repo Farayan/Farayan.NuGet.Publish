@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Automate publishing a project's nuget package during build process.</Description>
+    <AssemblyVersion>1.0.1912.88</AssemblyVersion>
+    <FileVersion>1.0.1912.88</FileVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.1912-beta-03</Version>
+    <Authors>Farayan</Authors>
+    <Company>Farayan</Company>
+    <Product>NuGet Publish MSBuild target</Product>
+    <Title>NuGet Publish MSBuild target</Title>
+    <Copyright>Copyright © Farayan 2019</Copyright>
+    <PackageTags>nuget;publish;target;msbuild</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/NuGet/Media/master/Images/MainLogo/256x256/nuget_256.png</PackageIconUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <developmentDependency>true</developmentDependency>
+    <RepositoryUrl>https://github.com/Farayan/Farayan.NuGet.Publish</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageProjectUrl>https://github.com/Farayan/Farayan.NuGet.Publish</PackageProjectUrl>
+		<PackageVersion>1.1.$([System.DateTime]::Now.ToString("yyyyMMdd.HHmmss"))</PackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>True</UpdatePackageVersion>
+    <PackageVersionSettings>AssemblyVersion.None.Beta</PackageVersionSettings>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <NuGetPublishLocation>D:\References\Packages</NuGetPublishLocation>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>True</UpdatePackageVersion>
+    <PackageVersionSettings>AssemblyVersion.None.None</PackageVersionSettings>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <NoWarn>1701;1702</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Farayan.NuGet.Publish.props" />
+    <None Remove="Farayan.NuGet.Publish.targets" />
+    <None Remove="tools\Farayan.NuGet.Publish.VisualStudio.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Farayan.NuGet.Publish.props">
+      <PackagePath>build\;buildCrossTargeting\</PackagePath>
+      <Pack>true</Pack>
+    </Content>
+    <Content Include="Farayan.NuGet.Publish.targets">
+      <Pack>true</Pack>
+      <PackagePath>build\;buildCrossTargeting\</PackagePath>
+    </Content>
+    <Content Include="tools\Farayan.NuGet.Publish.VisualStudio.exe">
+      <Pack>true</Pack>
+      <PackagePath>tools\</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+ 
+  <PropertyGroup>
+    <NuGetPublishVersion Condition="'$(NuGetPublishVersion)' == ''">5.4.0</NuGetPublishVersion>
+    <NuGetPublishPath Condition="'$(NuGetPublishPath)' == ''">$(UserProfile)\.nuget\$(NuGetPublishVersion)\</NuGetPublishPath>
+  </PropertyGroup>
+	<Target Name="PublishPack" AfterTargets="Pack">
+		<DownloadFile Condition="!Exists('$(NuGetPublishPath)nuget.exe') AND '$(NuGetPublishLocation)' != ''" SourceUrl="https://dist.nuget.org/win-x86-commandline/v$(NuGetPublishVersion)/nuget.exe" DestinationFolder="$(NuGetPublishPath)" />
+		<Exec Command="&quot;$(NuGetPublishPath)nuget.exe&quot; $(NuGetPublishCmd) &quot;$(PackageOutputAbsolutePath)$(PackageId).$(PackageVersion).nupkg&quot; -Source &quot;$(NuGetPublishLocation.TrimEnd('\'))&quot;" Condition="'$(NuGetPublishCmd)' != '' and '$(NuGetPublishLocation)' != '' " />
+		<Warning Text="Skipping NuGet publish, NuGetPublishCmd is not set in project file." Condition="'$(NuGetPublishCmd)' == ''" />
+		<Warning Text="Skipping NuGet publish, NuGetPublishLocation is not set in project file." Condition="'$(NuGetPublishLocation)' == ''" />
+	</Target>
+	
+	<PropertyGroup>
+		<TargetsTriggeredByCompilation>PreparePublish</TargetsTriggeredByCompilation>
+	</PropertyGroup>
+	<Target Name="PreparePublish">
+		<CreateProperty Value="push">
+			<Output TaskParameter="Value" PropertyName="NuGetPublishCmd" />
+		</CreateProperty>
+	</Target>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<NuGetPublishCmd>push</NuGetPublishCmd>
+		<NuGetPublishLocation>http://nexus.local:63987/repository/nuget-hosted/</NuGetPublishLocation>
+	</PropertyGroup>
+</Project>

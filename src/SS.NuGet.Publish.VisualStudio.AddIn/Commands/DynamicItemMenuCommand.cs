@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.Shell.Interop;
 
-namespace SS.NuGet.Publish.VisualStudio.AddIn.Commands
+namespace Farayan.NuGet.Publish.VisualStudio.AddIn.Commands
 {
     class DynamicItemMenuCommand : OleMenuCommand
     {

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="SS.NuGet.Publish.VisualStudio.AddIn.7c3fe08a-1506-4d00-8e59-ca7b6fc6f62c" Version="1.0.1904.18" Language="en-US" Publisher="Simpler Software" />
+        <Identity Id="Farayan.NuGet.Publish.VisualStudio.AddIn.7c3fe08a-1506-4d00-8e59-ca7b6fc6f62c" Version="1.0.1904.18" Language="en-US" Publisher="Simpler Software" />
         <DisplayName>NuGet Publish VisualStudio AddIn</DisplayName>
-        <Description xml:space="preserve">UI dialogs that complement the SS.NuGet.Publish nuget package. Add the nuget package to your project to automate nuget publishing with each build.</Description>
+        <Description xml:space="preserve">UI dialogs that complement the Farayan.NuGet.Publish nuget package. Add the nuget package to your project to automate nuget publishing with each build.</Description>
         <Tags>nuget,publish,target,msbuild</Tags>
     </Metadata>
     <Installation>
