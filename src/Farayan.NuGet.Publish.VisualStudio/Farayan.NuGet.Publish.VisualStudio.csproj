@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1CBA1375-2301-480A-8841-6891889EA8B6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SS.NuGet.Publish.VisualStudio</RootNamespace>
-    <AssemblyName>SS.NuGet.Publish.VisualStudio</AssemblyName>
+    <RootNamespace>Farayan.NuGet.Publish.VisualStudio</RootNamespace>
+    <AssemblyName>Farayan.NuGet.Publish.VisualStudio</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -82,6 +82,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y "$(TargetPath)" "$(SolutionDir)SS.NuGet.Publish\tools\"</PostBuildEvent>
+    <PostBuildEvent>xcopy /y "$(TargetPath)" "$(SolutionDir)Farayan.NuGet.Publish\tools\"</PostBuildEvent>
   </PropertyGroup>
 </Project>

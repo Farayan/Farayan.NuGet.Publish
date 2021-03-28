@@ -9,7 +9,7 @@
     <Copyright>Copyright © Simpler Software 2019</Copyright>
     <PackageTags>nuget;publish;target;msbuild</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>This is nothing more than a test for the nuget package SS.NuGet.Publish</Description>
+    <Description>This is nothing more than a test for the nuget package Farayan.NuGet.Publish</Description>
     <AssemblyVersion>1.0.1904.11</AssemblyVersion>
     <FileVersion>1.0.1904.11</FileVersion>
     <CfgPropertyPagesGuidsAddCSharp>{AA790F50-5208-41F5-89B2-D3733E12BE1D}</CfgPropertyPagesGuidsAddCSharp>
@@ -42,7 +42,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SS.NuGet.Publish\Farayan.NuGet.Publish.csproj" />
+    <ProjectReference Include="..\Farayan.NuGet.Publish\Farayan.NuGet.Publish.csproj" />
   </ItemGroup>
 
 </Project>

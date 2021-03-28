@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farayan.NuGet.Publish", "SS.NuGet.Publish\Farayan.NuGet.Publish.csproj", "{6AF4B709-5099-456F-84B4-AA24EAA847B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farayan.NuGet.Publish", "Farayan.NuGet.Publish\Farayan.NuGet.Publish.csproj", "{6AF4B709-5099-456F-84B4-AA24EAA847B1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1CBA1375-2301-480A-8841-6891889EA8B6} = {1CBA1375-2301-480A-8841-6891889EA8B6}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farayan.NuGet.Publish.Test", "SS.NuGet.Publish.Test\Farayan.NuGet.Publish.Test.csproj", "{33D444C6-0B38-4DF5-A09E-102467154CB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farayan.NuGet.Publish.Test", "Farayan.NuGet.Publish.Test\Farayan.NuGet.Publish.Test.csproj", "{33D444C6-0B38-4DF5-A09E-102467154CB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farayan.NuGet.Publish.VisualStudio", "SS.NuGet.Publish.VisualStudio\Farayan.NuGet.Publish.VisualStudio.csproj", "{1CBA1375-2301-480A-8841-6891889EA8B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farayan.NuGet.Publish.VisualStudio", "Farayan.NuGet.Publish.VisualStudio\Farayan.NuGet.Publish.VisualStudio.csproj", "{1CBA1375-2301-480A-8841-6891889EA8B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farayan.NuGet.Publish.VisualStudio.AddIn", "SS.NuGet.Publish.VisualStudio.AddIn\Farayan.NuGet.Publish.VisualStudio.AddIn.csproj", "{78F35082-367D-4378-828A-1937E0274A7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farayan.NuGet.Publish.VisualStudio.AddIn", "Farayan.NuGet.Publish.VisualStudio.AddIn\Farayan.NuGet.Publish.VisualStudio.AddIn.csproj", "{78F35082-367D-4378-828A-1937E0274A7C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D4C68B6-A189-4148-85FA-4BAA2B75371C}"
 EndProject
