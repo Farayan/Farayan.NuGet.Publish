@@ -330,3 +330,4 @@ ASALocalRun/
 .mfractor/
 
 SS.NuGet.Publish.VisualStudio.exe
+/src/Farayan.NuGet.Publish/tools/Farayan.NuGet.Publish.VisualStudio.exe
