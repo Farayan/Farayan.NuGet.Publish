@@ -28,7 +28,7 @@
 		<Company>Farayan</Company>
 		<Deterministic>false</Deterministic>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
-		<DocumentationFile>$(AssemblyName).xml</DocumentationFile>
+		<DocumentationFile>.$(AssemblyName).xml</DocumentationFile>
 		<AssemblyOriginatorKeyFile>Farayan.snk</AssemblyOriginatorKeyFile>
 		<SignAssembly>true</SignAssembly>
 		<LangVersion>9</LangVersion>
