@@ -51,9 +51,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="tools\**" />
+    <EmbeddedResource Remove="tools\**" />
+    <None Remove="tools\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Farayan.NuGet.Publish.props" />
     <None Remove="Farayan.NuGet.Publish.targets" />
-    <None Remove="tools\Farayan.NuGet.Publish.VisualStudio.exe" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,11 +69,6 @@
     <Content Include="Farayan.NuGet.Publish.targets">
       <Pack>true</Pack>
       <PackagePath>build\;buildCrossTargeting\</PackagePath>
-    </Content>
-    <Content Include="tools\Farayan.NuGet.Publish.VisualStudio.exe">
-      <Pack>true</Pack>
-      <PackagePath>tools\</PackagePath>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
