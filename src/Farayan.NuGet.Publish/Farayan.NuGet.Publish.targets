@@ -33,16 +33,6 @@
 		<SignAssembly>true</SignAssembly>
 		<LangVersion>9</LangVersion>
 	</PropertyGroup>
-	<!--
-	<PropertyGroup>
-		<TargetsTriggeredByCompilation>PreparePublish</TargetsTriggeredByCompilation>
-	</PropertyGroup>
-	<Target Name="PreparePublish">
-		<CreateProperty Value="push">
-			<Output TaskParameter="Value" PropertyName="NuGetPublishCmd"/>
-		</CreateProperty>
-	</Target>
-	-->
 	<PropertyGroup>
 		<CfgPropertyPagesGuidsAddCSharp>{AA790F50-5208-41F5-89B2-D3733E12BE1D}</CfgPropertyPagesGuidsAddCSharp>
 		<NuGetPublishVersion Condition="'$(NuGetPublishVersion)' == ''">5.4.0</NuGetPublishVersion>
@@ -56,14 +46,15 @@
 	</Target>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<NuGetPublishCmd>add</NuGetPublishCmd>
-		<NuGetPublishLocation>D:\Programs\NuGet\repo</NuGetPublishLocation>
+		<NuGetPublishLocation>$(NUGET_FOLDER_REPO)</NuGetPublishLocation>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<NuGetPublishCmd>push</NuGetPublishCmd>
-		<NuGetPublishLocation>http://nexus.local:63987/repository/nuget-hosted/</NuGetPublishLocation>
+		<NuGetPublishLocation>$(NUGET_NEXUS_REPO)</NuGetPublishLocation>
 	</PropertyGroup>
 	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-		<Exec Command="dotnet restore $(MSBuildProjectDirectory)\$(MSBuildProjectName).csproj --force-evaluate --no-cache" />
+		<Warning Text="Skipping RESTORE. value of `UpdateDepsForced` ($(UpdateDepsForced)) is not `true`" Condition="'$(UpdateDepsForced)' != 'true'" />
+		<Exec Command="dotnet restore $(MSBuildProjectDirectory)\$(MSBuildProjectName).csproj --force-evaluate --no-cache" Condition="'$(UpdateDepsForced)' == 'true'" />
 		<SuffixVersionWithPatchBuildVersion MajorMinorVersion="$(MajorMinorVersion)">
 			<Output PropertyName="AssemblyVersion" TaskParameter="FullVersion" />
 		</SuffixVersionWithPatchBuildVersion>

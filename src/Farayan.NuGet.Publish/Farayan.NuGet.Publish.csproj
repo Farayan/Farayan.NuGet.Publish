@@ -80,6 +80,6 @@
   </ItemGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<NuGetPublishLocation>http://nexus.local:63987/repository/nuget-hosted/</NuGetPublishLocation>
+		<NuGetPublishLocation>$(NUGET_NEXUS_REPO)</NuGetPublishLocation>
 	</PropertyGroup>
 </Project>
