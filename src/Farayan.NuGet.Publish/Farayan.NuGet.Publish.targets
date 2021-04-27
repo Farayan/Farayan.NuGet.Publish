@@ -53,8 +53,8 @@
 		<NuGetPublishLocation>$(NUGET_NEXUS_REPO)</NuGetPublishLocation>
 	</PropertyGroup>
 	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-		<Warning Text="Skipping RESTORE. value of `UpdateDepsForced` ($(UpdateDepsForced)) is not `true`" Condition="'$(UpdateDepsForced)' != 'true'" />
-		<Exec Command="dotnet restore $(MSBuildProjectDirectory)\$(MSBuildProjectName).csproj --force-evaluate --no-cache" Condition="'$(UpdateDepsForced)' == 'true'" />
+		<Warning Text="Skipping RESTORE. value of `ForceRestoreDependentPackages` ($(ForceRestoreDependentPackages)) is not `true`" Condition="'$(ForceRestoreDependentPackages)' != 'true'" />
+		<Exec Command="dotnet restore $(MSBuildProjectDirectory)\$(MSBuildProjectName).csproj --force-evaluate --no-cache" Condition="'$(ForceRestoreDependentPackages)' == 'true'" />
 		<SuffixVersionWithPatchBuildVersion MajorMinorVersion="$(MajorMinorVersion)">
 			<Output PropertyName="AssemblyVersion" TaskParameter="FullVersion" />
 		</SuffixVersionWithPatchBuildVersion>
