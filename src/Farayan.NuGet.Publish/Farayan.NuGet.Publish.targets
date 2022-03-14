@@ -31,7 +31,7 @@
 		<DocumentationFile>.$(AssemblyName).xml</DocumentationFile>
 		<AssemblyOriginatorKeyFile>Farayan.snk</AssemblyOriginatorKeyFile>
 		<SignAssembly>true</SignAssembly>
-		<LangVersion>9</LangVersion>
+		<LangVersion>preview</LangVersion>
 	</PropertyGroup>
 	<PropertyGroup>
 		<CfgPropertyPagesGuidsAddCSharp>{AA790F50-5208-41F5-89B2-D3733E12BE1D}</CfgPropertyPagesGuidsAddCSharp>
