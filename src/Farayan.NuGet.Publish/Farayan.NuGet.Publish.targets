@@ -1,5 +1,8 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<UsingTask TaskName="SuffixVersionWithPatchBuildVersion" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+	<UsingTask 
+		TaskName="SuffixVersionWithPatchBuildVersion" 
+		TaskFactory="RoslynCodeTaskFactory" 
+		AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
 		<ParameterGroup>
 			<MajorMinorVersion ParameterType="System.String" Required="true" />
 			<FullVersion ParameterType="System.String" Output="true" />
